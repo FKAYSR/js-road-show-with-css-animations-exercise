@@ -21,11 +21,16 @@
   /* Billedstørrelser (px) */
   --sun-size: 100px;
   --car-w: 200px;
+  --panda-size: 90px;
+  --eagle-size: 150px;
 
   /* Start/exit off-sets (px) */
   --off-car1: 200px;
   --off-car2: 200px;
   --off-car3: 200px;
+  --off-car4: 200px;
+  --off-panda: 100px;
+  --off-eagle: 200px;
 }
 
 /* ---------------------------------------------------------
@@ -191,14 +196,53 @@
    width: var(--car-w);
    max-width: 28vw;
    z-index: 1;
-   right: calc(-1 * var(--off-car2));
-   animation: car2 10s linear infinite;
+   right: calc(-1 * var(--off-car4));
+   animation: car4 15s linear infinite;
 }
 
-@keyframes car2 {
-  0% {transform: translateX(0) rotateY(180deg);}
+@keyframes car4 {
+  0% {transform: translateX(0);}
   90%,
   100% {
-    transform: translateX(calc(-100vw - var(--off-car2) ) ) rotateY(180deg);
+    transform: translateX(calc(-100vw - var(--off-car4) ) );
   }
 }
+
+.panda {
+  position: absolute;
+  bottom: 1vh;
+  width: var(--panda-size);
+  max-width: 28vw;
+  z-index: 10;
+  left: calc(-1 * var(--off-panda));
+  animation: panda 10s linear infinite;
+}
+
+@keyframes panda {
+  0% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(100vw + var(--off-panda)));
+  }
+}
+
+.eagles {
+   position: absolute;
+   bottom: 70vh;
+   width: var(--eagle-size);
+   max-width: 28vw;
+   z-index: 2;
+   right: calc(-1 * var(--off-eagle));
+   animation: eagles 2s linear infinite;
+}
+
+@keyframes eagles {
+  0% {transform: translateX(0);}
+  90%,
+  100% {transform: translateX(calc(-100vw - var(--off-eagle) ) );}
+}
+
+
+
