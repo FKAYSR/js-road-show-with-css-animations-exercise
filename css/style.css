@@ -156,7 +156,7 @@
    max-width: 28vw;
    z-index: 2;
    right: calc(-1 * var(--off-car2));
-   animation: car2 2s linear infinite;
+   animation: car2 8s linear infinite;
 }
 
 @keyframes car2 {
@@ -244,5 +244,29 @@
   100% {transform: translateX(calc(-100vw - var(--off-eagle) ) );}
 }
 
+/* Selector (class i HTML). rgba = red green blue alfa*/
+.tooltip {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.35px;
+  max-width: min(320px, 90vw);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25 ease;
+  pointer-events: none; /*så objektet ikke fanger musen når man flytter den henover*/
+  z-index: 1000;
+}
 
+/* is-visible er et navn man selv vælger */
+.tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
