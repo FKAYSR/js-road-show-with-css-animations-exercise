@@ -1,6 +1,7 @@
 "use strict";
 
 // Array som indeholder js objekter
+// Indgangsnøgle klasserne fra html
 const carInfo = [
   {
     className: "car1",
@@ -47,10 +48,30 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(function(){
         tooltip.classList.remove("is-visible");
       },8000);
-      
     }
   }
   
+carInfo.forEach((car) => {
+  // elem tager fat om en af bilerne
+  document.querySelectorAll("." + car.class).forEach((elem) => {
+    elem.addEventListener("mouseover", () => {
+      // Template literals = back ticks
+      const carDetails = `
+      <strong>${car.carBrand} </strong>
+      <br>
+      Model: ${car.carModel}
+      <br>
+      Release year: ${car.releaseYear}
+      <br>
+      Color: ${car.color}
+      <br>
+      Fuel type: ${car.fuelType}
+      `;
+      // ShowTooltip er en funktion fra tidligere, forventer en parameter som vi her henter fra carDetails
+      showTooltip(carDetails)
+    });
+  });
+});
 
 
   // Hent DOM Elementer
