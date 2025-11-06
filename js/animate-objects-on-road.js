@@ -29,14 +29,33 @@ const carInfo = [
 ];
 
 
+// Venter med at køre js koden indtil hele HTML siden er indlæst/loaded
 document.addEventListener("DOMContentLoaded", () => {
   
+  // Finder tooltip id og gemmer det i en variabel
+  const tooltip = document.getElementById("tooltip");
   
+  // Funktion der viser tooltip med bil oplysninger
+  // Parameter: html = indeholder den tekst som er i html-tagsne
+  function showTooltip(html){
+    if (tooltip) {
+      // Indsætter teksten i tooltippen
+      tooltip.innerHTML = html;
+      // Gør tooltippen synlig med css klassen
+      tooltip.classList.add("is-visible");
+
+      setTimeout(function(){
+        tooltip.classList.remove("is-visible");
+      },8000);
+      
+    }
+  }
   
-  
-  
+
+
   // Hent DOM Elementer
   // Henter objekter
+
   const redCar = document.getElementById("red-car");
   const policeCar = document.getElementById("police-car");
   const blueCar = document.getElementById("blue-car");
@@ -77,6 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
       scene.classList.toggle("night");
     });
   }
-  
+
 });
 
