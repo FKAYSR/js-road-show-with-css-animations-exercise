@@ -9,7 +9,7 @@ const carInfo = [
     carModel: "Mustang",
     releaseYear: 1974,
     color: "red",
-    fuelType: "Diesel",
+    fuelType: "Diesel"
   },
   {
     className: "car3",
@@ -17,7 +17,7 @@ const carInfo = [
     carModel: 2,
     releaseYear: 1999,
     color: "sky blue",
-    fuelType: "Benzin",
+    fuelType: "Benzin"
   },
   {
     className: "car2",
@@ -25,7 +25,7 @@ const carInfo = [
     carModel: "AGF",
     releaseYear: 2020,
     color: "blue and white",
-    fuelType: "kom så de hviiie",
+    fuelType: "kom så de hviiie"
   }
 ];
 
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
 carInfo.forEach((car) => {
   // elem tager fat om en af bilerne
-  document.querySelectorAll("." + car.class).forEach((elem) => {
+  document.querySelectorAll("." + car.className).forEach((elem) => {
     elem.addEventListener("mouseover", () => {
       // Template literals = back ticks
       const carDetails = `
@@ -71,7 +71,22 @@ carInfo.forEach((car) => {
       showTooltip(carDetails)
     });
   });
-});
+});,
+
+
+// Nedenstående er forsøg på de objekter jeg selv har indsat (bus, rød panda og eagle)
+const extrasInfo = [
+  {
+    extraName: "car4",
+    extraColor:
+  },
+  {
+    extraName: "panda"
+  },
+  {
+    extraName: "eagles"
+  }
+]
 
 
   // Hent DOM Elementer
