@@ -77,7 +77,7 @@ carInfo.forEach((car) => {
 // Nedenstående er forsøg på de objekter jeg selv har indsat (bus, rød panda og eagle)
 const extrasInfo = [
   {
-    extraName: "car4",
+    extraName: "car4", 
     extraColor:
   },
   {
